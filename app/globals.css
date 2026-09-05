@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Archivo Black", "Arial Black", sans-serif;
+  --font-body: "Space Grotesk", "Helvetica Neue", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f0e4;
+  color: #0d0d0d;
+  font-family: var(--font-body);
+  background-image:
+    linear-gradient(#0d0d0d0d 1px, transparent 1px),
+    linear-gradient(90deg, #0d0d0d0d 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.dark body {
+  background-color: #111110;
+  color: #f5f0e4;
+  background-image:
+    linear-gradient(#f5f0e40d 1px, transparent 1px),
+    linear-gradient(90deg, #f5f0e40d 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Visible keyboard focus, brutalist style */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #0d0d0d;
+  outline-offset: 2px;
+}
+
+.dark a:focus-visible,
+.dark button:focus-visible,
+.dark input:focus-visible,
+.dark textarea:focus-visible {
+  outline-color: #f5f0e4;
+}
+
+::selection {
+  background-color: #ffe600;
+  color: #0d0d0d;
+}
+
+/* Reusable brutalist primitives */
+.border-brut {
+  border-width: 3px;
+  border-color: #0d0d0d;
+}
+
+.dark .border-brut {
+  border-color: #f5f0e4;
+}
+
+.btn-brut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  background-color: #ffe600;
+  color: #0d0d0d;
+  border: 3px solid #0d0d0d;
+  box-shadow: 5px 5px 0 0 #0d0d0d;
+  transition:
+    transform 120ms cubic-bezier(0.65, 0, 0.35, 1),
+    box-shadow 120ms cubic-bezier(0.65, 0, 0.35, 1);
+  cursor: pointer;
+}
+
+.btn-brut:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 0 #0d0d0d;
+}
+
+.btn-brut:active,
+.btn-brut.is-pressed {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 0 #0d0d0d;
+}
+
+.dark .btn-brut {
+  box-shadow: 5px 5px 0 0 #f5f0e4;
+  border-color: #f5f0e4;
+}
+.dark .btn-brut:hover {
+  box-shadow: 7px 7px 0 0 #f5f0e4;
+}
+.dark .btn-brut:active,
+.dark .btn-brut.is-pressed {
+  box-shadow: 2px 2px 0 0 #f5f0e4;
+}
+
+.card-brut {
+  border: 3px solid #0d0d0d;
+  border-radius: 1.25rem;
+  background-color: #f5f0e4;
+  box-shadow: 6px 6px 0 0 #0d0d0d;
+  transition:
+    transform 150ms cubic-bezier(0.65, 0, 0.35, 1),
+    box-shadow 150ms cubic-bezier(0.65, 0, 0.35, 1);
+  overflow: hidden;
+}
+
+.card-brut:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 0 #0d0d0d;
+}
+
+.dark .card-brut {
+  background-color: #1a1a18;
+  border-color: #f5f0e4;
+  box-shadow: 6px 6px 0 0 #f5f0e4;
+}
+.dark .card-brut:hover {
+  box-shadow: 9px 9px 0 0 #f5f0e4;
+}
+
+.tag-brut {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 2px solid #0d0d0d;
+  background: #fff;
+}
+
+.dark .tag-brut {
+  border-color: #f5f0e4;
+  background: #1a1a18;
+}
+
+.prose-brut {
+  max-width: 68ch;
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+.prose-brut h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose-brut h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-top: 2.25rem;
+}
+
+.prose-brut p {
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.prose-brut a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.prose-brut blockquote {
+  border-left: 4px solid #ff3ea5;
+  font-style: italic;
+  font-weight: 600;
+  padding-left: 1.25rem;
+}
+
+.prose-brut pre {
+  border: 3px solid #0d0d0d;
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 0 #0d0d0d;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.dark .prose-brut pre {
+  border-color: #f5f0e4;
+  box-shadow: 6px 6px 0 0 #f5f0e4;
+}
+
+.prose-brut img {
+  border-radius: 1rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
